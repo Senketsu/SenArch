@@ -16,27 +16,32 @@ If you, random person stumbling upon this repo, want to build this live iso, fol
 * Add your customized configs into `./data/configs`  
 * When building the iso, you will be prompted whether you want to overwrite any conflicting configs.  
 * Choose no ('n')  
+
 **Adding more configs from system**
 * Edit `./tools/samb-configs.sh` to your hearts content.  
+
 **Changing pre-installed packages**
 * Edit `./data/template/packages.both`  
+
 **Adding AUR packages**
-* 1) build desired package
-* 2) copy it into /data/AUR
-* 3) cd into `/data/AUR`
-* 4) `repo-add ./SenArchAUR.db ./packageName`
-* 5) edit `packages.both`
+```
+1) build desired package
+2) copy it into /data/AUR
+3) cd into `/data/AUR`
+4) `repo-add ./SenArchAUR.db ./packageName`
+5) edit `packages.both`
+```
 
 *Want to cutomize it more ?*
 Might as well make your own from scratch.
-`https://wiki.archlinux.org/index.php/archiso`
+[Archiso Wiki](https://wiki.archlinux.org/index.php/archiso)
 
 ### Build  
 ================================================================================  
-1) Run 'build.sh' located in the main SenArch directory  
-2) Let the script do it's thing  
-3) ....  
-4) profit ???  
+* Run 'build.sh' located in the main SenArch directory  
+* Let the script do it's thing  
+* ....  
+* profit ???  
 
 ### Install  
 ================================================================================  
@@ -47,19 +52,20 @@ If you struggle, I've included documentation from the Arch wiki. Read it.
 **Alternative:**  
 I've also added two lil scripts in the 'tools' folder for easier install process.  
   'senarch-install' & 'senarch-prepare'  
-**NOTE:**Those two scripts alone are not be enough to successfuly isntall the system onto disk.  
+**NOTE:**  
+Those two scripts alone are not be enough to successfuly install the system onto a disk.  
 ***Follow these steps:***
-* 1) create your desired partitions with fdisk
-* 2) mount your partitions to their respective folders in `/mnt` (refer to the guide if you unsure)
-* 3) run `senarch-install.sh`
-* 4) check suggested files for corrections
-* 5) `umount -R /mnt && reboot`
+* create your desired partitions with fdisk
+* mount your partitions to their respective folders in `/mnt` (refer to the guide if you unsure)
+* run `senarch-install.sh`
+* check suggested files for corrections
+* `umount -R /mnt && reboot`
  
 
 ### Additional Info  
 ================================================================================  
-Live ISO su pass `SenArchSU`
-Live ISO user pass `changeme`
+Live ISO su pass `SenArchSU`  
+Live ISO user pass `changeme`  
 
 ### TODO:  
 ================================================================================  
