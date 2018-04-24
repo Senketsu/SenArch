@@ -38,10 +38,17 @@ Might as well make your own from scratch.
 
 ### Build  
 ================================================================================  
-* Run 'build.sh' located in the main SenArch directory  
-* Let the script do it's thing  
-* ....  
-* profit ???  
+Given advice from Archiso wiki, you should set ownership of the `./data/template` directory and it's files to root.  
+Simple `mv ./data/template ./data/temp` & `sudo cp -r ./data/temp ./data/template` should do the trick.  
+
+*So the build process with all precautions:*
+```
+git clone https://github.com/Senketsu/SenArch
+cd SenArch
+mv ./data/template ./data/temp
+sudo cp -r ./data/temp ./data/template
+./build.sh
+```
 
 ### Install  
 ================================================================================  
