@@ -3,15 +3,14 @@ Personalized Arch linux live iso build files
 
 
 #### This repo is intented only as a personal backup.
-If you, random person stumbling upon this repo, want to build this live iso, try removing all packages under AUR from data/template/packages.both
-Follow bellow steps and hopefuly it will work out
+If you, random person stumbling upon this repo, want to build this live iso, follow bellow steps and hopefuly it will work out.
 
 #### DISCLAIMER
-**THIS README AND SOFTWARE COMES WITH NO WARRANTY !!!**
-(there are reported cases when using this repo turned people gay)
-***USE AT OWN RISK***
+**THIS README AND SOFTWARE COMES WITH NO WARRANTY !!!**  
+(there are reported cases when using this repo turned people gay)  
+***USE AT OWN RISK***  
 
-### Customize
+### Customize  
 ================================================================================
 **I want to use special configs for my ISO, not my system ones..what do ?**
 * Add your customized configs into `./data/configs`  
@@ -32,14 +31,14 @@ Follow bellow steps and hopefuly it will work out
 Might as well make your own from scratch.
 `https://wiki.archlinux.org/index.php/archiso`
 
-### Build
+### Build  
 ================================================================================
 1) Run 'build.sh' located in the main SenArch directory  
 2) Let the script do it's thing  
 3) ....  
 4) profit ???  
 
-### Install
+### Install  
 ================================================================================
 I've included step-by-step installation guide in the **docs** folder.  
 Hopefuly, this guide will be newbie friendly enough.
@@ -57,11 +56,11 @@ I've also added two lil scripts in the 'tools' folder for easier install process
 * 5) `umount -R /mnt && reboot`
  
 
-### Additional Info
+### Additional Info  
 ================================================================================
 Live ISO su pass `SenArchSU`
 Live ISO user pass `changeme`
 
-### TODO:
+### TODO:  
 ================================================================================
 TODO
