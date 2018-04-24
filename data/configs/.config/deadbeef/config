@@ -1,0 +1,176 @@
+ape.write_apev2 1
+artwork.cache.period 48
+artwork.cache_reset_time ld
+artwork.enable_albumartorg 0
+artwork.enable_embedded 1
+artwork.enable_lastfm 1
+artwork.enable_localfolder 1
+artwork.enable_wos 0
+artwork.filemask *cover*.jpg;*front*.jpg;*folder*.jpg;*cover*.png;*front*.png;*folder*.png
+artwork.scale_towards_longer 1
+cli_add_playlist_name Default
+cli_add_to_specific_playlist 1
+close_send_to_tray 1
+converter.dsp_preset -1
+converter.encoder_preset 3
+converter.output_folder /home/maiku
+converter.output_format 0
+converter.overwrite_action 0
+deadbeef_version 0.7.2
+filechooser.lastdir file:
+filechooser.playlist.lastdir file:
+gtkui.color.bar_background 34952 35466 34181
+gtkui.color.bar_foreground 13364 25957 42148
+gtkui.color.listview_cursor 49601 32125 4369
+gtkui.color.listview_even_row 11822 13364 13878
+gtkui.color.listview_odd_row 11822 13364 13878
+gtkui.color.listview_playing_text 62965 31097 0
+gtkui.color.listview_selected_text 64764 59881 20303
+gtkui.color.listview_selection 13364 25957 42148
+gtkui.color.tabstrip_playing_text 54227 56026 58339
+gtkui.color.tabstrip_selected_text 29298 40863 53199
+gtkui.color.tabstrip_text 54227 55255 53199
+gtkui.columns.playlist [{"title":"Playing","id":"1","format":"","size":"46","align":"0","color_override":"0","color":"#ff000000"},{"title":"Title","id":"-1","format":"%title%","size":"299","align":"0","color_override":"0","color":"#ff000000"},{"title":"Artist","id":"-1","format":"%artist%","size":"174","align":"0","color_override":"0","color":"#ff000000"},{"title":"Album","id":"-1","format":"%album%","size":"180","align":"0","color_override":"0","color":"#ff000000"},{"title":"Duration","id":"-1","format":"%length%","size":"66","align":"0","color_override":"0","color":"#ff000000"},{"title":"Track No","id":"-1","format":"%track number%","size":"57","align":"1","color_override":"0","color":"#ff000000"}]
+gtkui.columns.search [{"title":"Artist / Album","id":"-1","format":"%artist% - %album%","size":"324","align":"0"},{"title":"Track No","id":"-1","format":"%track number%","size":"50","align":"1"},{"title":"Title","id":"-1","format":"%title%","size":"150","align":"0"},{"title":"Duration","id":"-1","format":"%length%","size":"50","align":"0"}]
+gtkui.embolden_current_track 0
+gtkui.embolden_selected_tracks 0
+gtkui.eq.visible 0
+gtkui.font.listview_column_text Cantarell Bold 11
+gtkui.font.listview_group_text Cantarell 11
+gtkui.font.tabstrip_text Sans 11
+gtkui.hide_remove_from_disk 1
+gtkui.hide_tray_icon 0
+gtkui.italic_current_track 0
+gtkui.last_playlist_save_name
+gtkui.layout tabbed_playlist hideheaders=0 {}
+gtkui.layout.0.6.2 vbox expand="0 1" fill="1 1" homogeneous=0 {hbox expand="0 1 0" fill="1 1 1" homogeneous=0 {playtb {} seekbar {} volumebar {} } tabbed_playlist hideheaders=0 width=840 {} }
+gtkui.mmb_delete_playlist 0
+gtkui.name_playlist_from_folder 1
+gtkui.override_bar_colors 1
+gtkui.override_listview_colors 1
+gtkui.override_tabstrip_colors 1
+gtkui.playlist.group_by_tf
+gtkui.statusbar.visible 1
+gtkui.tabscroll 0
+gtkui.tabstrip_embolden_playing 0
+gtkui.tabstrip_embolden_selected 0
+gtkui.tabstrip_italic_selected 0
+gtkui.titlebar_playing %a - %t - DeaDBeeF-%V
+gtkui.titlebar_playing_tf %artist% - %title% - DeaDBeeF-%_deadbeef_version%
+gtkui.titlebar_stopped DeaDBeeF-%V
+gtkui.titlebar_stopped_tf DeaDBeeF-%_deadbeef_version%
+gui_plugin GTK3
+hotkey.key01 "F1" 0 0 help
+hotkey.key02 "Delete" 1 0 remove_from_playlist
+hotkey.key03 "Alt 1" 0 0 playlist1
+hotkey.key04 "Alt 2" 0 0 playlist2
+hotkey.key05 "Alt 3" 0 0 playlist3
+hotkey.key06 "Alt 4" 0 0 playlist4
+hotkey.key07 "Alt 5" 0 0 playlist5
+hotkey.key08 "Alt 6" 0 0 playlist6
+hotkey.key09 "Alt 7" 0 0 playlist7
+hotkey.key10 "Alt 8" 0 0 playlist8
+hotkey.key11 "Alt 9" 0 0 playlist9
+hotkey.key12 "Alt 0" 0 0 playlist10
+hotkey.key13 "Super KP_Left" 0 1 prev
+hotkey.key14 "Super KP_5" 0 1 play
+hotkey.key15 "Super KP_Insert" 0 1 toggle_pause
+hotkey.key16 "Super KP_Decimal" 0 1 stop
+hotkey.key17 "Super KP_Right" 0 1 next
+hotkey.key18 "Super KP_Enter" 0 1 playback_random
+hotkey.key19 "Super KP_Subtract" 0 1 volume_down
+hotkey.key20 "Super KP_Add" 0 1 volume_up
+hotkey.key21 "Super KP_Multiply" 0 1 toggle_mute
+hotkey.key22 "q" 1 0 add_to_playback_queue
+hotkey.key23 "Shift q" 1 0 remove_from_playback_queue
+hotkeys_created 1
+ignore_archives 1
+junk.enable_cp1251_detection 1
+junk.enable_shift_jis_detection 1
+lastfm.disable_np 0
+lastfm.enable 0
+lastfm.login user
+lastfm.mbid 0
+lastfm.password pass
+lastfm.prefer_album_artist 0
+lastfm.scrobbler_url http://post.audioscrobbler.com
+lastfm.submit_tiny_tracks 0
+mainwin.geometry.h 1018
+mainwin.geometry.maximized 0
+mainwin.geometry.w 840
+mainwin.geometry.x 1920
+mainwin.geometry.y 0
+mp3.id3v1_encoding iso8859-1
+mp3.id3v2_version 3
+mp3.write_id3v1 1
+mp3.write_id3v2 1
+network.http_user_agent deadbeef
+network.proxy.port 8080
+network.proxy.type HTTP
+notify.albumart 1
+notify.albumart_size 64
+notify.enable 1
+notify.format %t
+notify.format_content %a - %b
+notify.format_content_tf %artist% - %album%
+notify.format_title_tf %title%
+output_plugin PulseAudio output plugin
+playback.loop 0
+playback.order 2
+playback.volume -14.28930
+playlist.column.00 "Playing" "" 1 50 0
+playlist.column.01 "Title" "%t" -1 328 0
+playlist.column.02 "Artist" "%a" -1 140 0
+playlist.column.03 "Album" "%b" -1 180 0
+playlist.column.04 "Duration" "%l" -1 66 0
+playlist.column.05 "Track No" "%n" -1 57 1
+playlist.current 4
+playlist.cursor.0 0
+playlist.cursor.1 0
+playlist.cursor.2 0
+playlist.cursor.3 0
+playlist.cursor.4 2070
+playlist.cursor.5 115
+playlist.cursor.6 832
+playlist.cursor.7 14
+playlist.cursor.8 0
+playlist.cursor.9 0
+playlist.group_by
+playlist.scroll.0 0
+playlist.scroll.1 5162
+playlist.scroll.2 0
+playlist.scroll.3 0
+playlist.scroll.4 51318
+playlist.scroll.5 2568
+playlist.scroll.6 20381
+playlist.scroll.7 0
+playlist.scroll.8 0
+playlist.scroll.9 0
+playlist.scroll.cursorfollowplayback 1
+playlist.tab.00000 Default
+prefwin.geometry.h 489
+prefwin.geometry.w 723
+prefwin.geometry.x 1920
+prefwin.geometry.y 0
+replaygain_mode 0
+replaygain_preamp 0.0000000
+replaygain_scale 1
+resume.paused 0
+resume.playlist 4
+resume.position -1.000000
+resume.track -1
+resume_last_session 1
+search.column.00 "Artist / Album" "%a - %b" -1 324 0
+search.column.01 "Track No" "%n" -1 50 1
+search.column.02 "Title" "%t" -1 150 0
+search.column.03 "Duration" "%l" -1 50 0
+searchwin.geometry.h 150
+searchwin.geometry.w 577
+searchwin.geometry.x 445
+searchwin.geometry.y 22
+streamer.8_to_16 1
+trkproperties.geometry.h 475
+trkproperties.geometry.w 580
+trkproperties.geometry.x 275
+trkproperties.geometry.y 150
+wv.write_apev2 1

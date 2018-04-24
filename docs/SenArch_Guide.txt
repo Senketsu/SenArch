@@ -1,0 +1,188 @@
+Tips: Alt + arrow = change tty
+
+===================================
+#1 Partition disk /w fdisk or cfdisk & Formating
+===================================
+# fdisk /dev/sdX
+  n - new partition
+  a - make bootable
+  t - change type (e.g: swap)
+
+===================================
+#1a Encrypted:
+===================================
+Make 2 partitions: 1) boot ~ 500mb , 2) rest of disk for LUKS encrypted LVM
+
+  Setup LUKS & LVM:
+    # cryptsetup -c aes-xts-plain64 -s 512 -h sha512 -i 5000 -y luksFormat /dev/sdX2
+    # cryptsetup luksDump /dev/sdX2
+    # cryptsetup luksOpen /dev/sdX2 nameMe
+    # lvm pvcreate /dev/mapper/crypt
+    # lvm vgcreate lvmpool /dev/mapper/crypt
+
+  Setup LVM partitions:
+    # lvm lvcreate -L (size e.g: 10GB) -n root lvmpool
+    # lvm lvcreate -L (size e.g: 4G) -n swap lvmpool
+    # lvm lvcreate -l +100%FREE -n home lvmpool
+    # lvm lvs
+
+===================================
+#1b Non-encrypted:
+===================================
+Create your desired partition(s)
+Remember to set at least one as bootable
+
+===================================
+#2 Formating FS partitions & Mount
+===================================
+Formating:
+  # mkfs.ext4 /dev/sdaX   (all except swap)
+  # mkswap /dev/sdaX (swap)
+  # swapon /dev/sdaX
+For LVM home, root & additional - /dev/mapper/lvmpool-[label]
+
+Mounting:
+  # mount /dev/sdXX /mnt (root)
+  # mkdir /mnt/home
+  # mount /dev/sdXX /mnt/home
+If boot partition
+  # mkdir /mnt/boot
+  # mount /dev/sdXX /mnt/boot
+
+
+======================================================================
+#3a Installing System from regular Arch ISO image
+======================================================================
+(OPT) Edit Pacman mirror list
+  # nano /etc/pacman.d/mirrorlist
+
+  # pacstrap /mnt base [+ additional space separated packs e.g: base-devel]
+  # genfstab -U /mnt >> /mnt/etc/fstab
+  # arch-chroot /mnt /bin/bash
+
+======================================================================
+#3b Installing System from Custom LIVE CD ArchISO
+======================================================================
+Copy system & boot image:
+  # time cp -ax / /mnt
+  # cp -vaT /run/archiso/bootmnt/arch/boot/$(uname -m)/vmlinuz /mnt/boot/vmlinuz-linux
+  # genfstab -U /mnt >> /mnt/etc/fstab
+  (if fails, just write it manualy..)
+  # arch-chroot /mnt /bin/bash
+
+Get rid of livecd traces:
+  # sed -i 's/Storage=volatile/#Storage=auto/' /etc/systemd/journald.conf
+  # systemctl disable pacman-init.service choose-mirror.service
+  # rm -r /etc/systemd/system/{choose-mirror.service,pacman-init.service,etc-pacman.d-gnupg.mount,getty@tty1.service.d}
+  # rm /etc/systemd/scripts/choose-mirror
+  # rm /etc/systemd/system/getty@tty1.service.d/autologin.conf
+  # rm /root/{.automated_script.sh,.zlogin}
+  # rm /etc/mkinitcpio-archiso.conf
+  # rm -r /etc/initcpio
+Only if don't want auto connect to wired network:
+    # rm /etc/udev/rules.d/81-dhcpcd.rules
+
+  # pacman-key --init
+  # pacman-key --populate archlinux
+
+(if boot & root at the same partition, resize to 32 bit  "resize2fs -s /dev/sdXX")
+(check fstab and remove wrong partition (etc...something)
+
+======================================================================
+#4 Customize the Install
+======================================================================
+Uncomment localization of your choice (en_US.UTF-8) & Generate
+  # nano /etc/locale.gen
+  # locale-gen
+Set the LANG variable in locale.conf: (en_US.UTF-8)
+  # nano /etc/locale.conf
+    LANG=en_US.UTF-8
+Make keyboard layout permanent:
+  # nano /etc/vconsole.conf
+    KEYMAP=[your choice, 'us' is okay]
+Set Hostname
+  # nano /etc/hostname
+  # nano /etc/hosts
+    e.g: hostname = test, add to hosts '127.0.0.1 test.localdomain test'
+
+Enable DHCPCD service (auto network connection):
+  # systemctl enable dhcpcd.service
+
+---------------------------------------------------------
+Encrypted system
+---------------------------------------------------------
+Edit /etc/mkinitcpio.conf & recreate Initramfs
+  # nano /etc/mkinitcpio.conf
+    add hooks 'encrypt' & 'lvm2'
+  # mkinitcpio -p linux
+--------------------------------------------------------
+Set root password:
+  # passwd
+(+ any other user you made)
+
+
+======================================================================
+#5 Boot Loader
+======================================================================
+Syslinux (prefered):
+  # pacman -S syslinux
+  # syslinux-install_update -i -a -m
+  # nano /boot/syslinux/syslinux.cfg
+  Edit LABEL
+    Set correct mount point for root
+    For Enctypted:
+      APPEND "root=/dev/mapper/lvmpool-root cryptdevice=/dev/sdxx:crypt rw"
+      (fallback to 'ro')
+
+GRUB:
+  # pacman -S grub os-prober
+  # grub-install --target=i386-pc --recheck /dev/sdX
+  # grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+======================================================================
+#6 FINISH
+======================================================================
+Reboot:
+  # exit
+  # umount -R /mnt
+  # reboot
+
+
+
+
+
+=====================================================
+Additional Setup
+=====================================================
+Add User:
+  # useradd -m -G wheel -s /bin/bash Senketsu
+  # passwd Senketsu
+
+Setting su/do:
+  # EDITOR=nano visudo
+  uncomment %wheel group
+  add: USER_NAME HOST_NAME= NOPASSWD: /usr/bin/pacman -S*, /usr/bin/pacman -Q*,
+
+Setup pacman multilib:
+  # nano /etc/pacman.conf
+
+
+=====================================================
+X Window System & Audio
+=====================================================
+  $ pacman -S xorg-server xorg-xinit xorg-twm xterm \
+     xscreensaver xf86-video-ati xf86-video-vesa alsa-lib alsa-utils
+
+=====================================================
+WM & FM & DM & Compozitor
+=====================================================
+  $ pacman -S awesome lightdm lightdm-gtk-greeter pcmanfm compton
+
+
+======================================================
+Systemctl command used in this installation:
+======================================================
+# systemctl enable dhcpcd.service
+# systemctl enable lightdm.service

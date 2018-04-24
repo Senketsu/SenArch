@@ -1,0 +1,211 @@
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ XORG
+xorg-server
+xorg-xinit
+xorg-twm
+xterm
+xscreensaver
+xf86-video-ati
+xf86-video-vesa
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ AUDIO
+alsa-lib
+alsa-utils
+pulseaudio
+pulseaudio-alsa
+paprefs
+pavucontrol
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ DESKTOP
+pcmanfm
+lightdm
+lightdm-gtk-greeter
+awesome
+compton
+conky
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ GTK & Themes
+gtk2
+gtksourceview2
+gtk-engine-murrine
+libappindicator-gtk2
+arc-gtk-theme
+arc-icon-theme
+gnome-themes-standard
+xdg-user-dirs
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ FONT
+ttf-bitstream-vera
+ttf-dejavu
+ttf-droid
+ttf-freefont
+ttf-hanazono
+ttf-inconsolata
+ttf-liberation
+ttf-linux-libertine
+ttf-arphic-uming
+ttf-indic-otf
+# // Fonts: Emoji / Unicode Symbols
+ttf-symbola
+noto-fonts-emoji
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ TOOLS
+termite
+mousepad
+galculator
+bleachbit
+xpad
+xarchiver
+keepassxc
+sxiv
+gmrun
+clamtk
+sqlitebrowser
+libreoffice
+mupdf
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ INTERNET
+firefox
+chromium
+falkon
+pepper-flash
+claws-mail
+hexchat
+transmission-remote-gtk
+# telegram-desktop
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Media & Games
+deadbeef
+audacity
+mcomix
+krita
+# obs-studio
+# steam
+# wine
+# winetricks
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ VBOX
+virtualbox-guest-utils
+virtualbox-guest-modules-arch
+# // HOST DUH
+virtualbox
+virtualbox-guest-iso
+virtualbox-host-modules-arch
+
+# @@@@@@@@@@@@@@@@@@@@@@@@@@@@@ AUR
+pasystray-gtk2
+paman
+# discord
+# code
+
+#  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ CLI Soft @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+mc
+ranger
+atool
+p7zip
+pcre2
+tmux
+htop
+vim
+trash-cli
+fdupes
+mediainfo
+
+# Security
+clamav
+rkhunter
+
+# Web
+w3m
+neomutt
+#mutt
+#notmuch
+#isync
+newsboat
+curl
+curlftpfs
+wget
+weechat
+youtube-dl
+transmission-cli
+
+# Media
+mpd
+ncmpcpp
+ffmpeg
+mpv
+
+# CLI AUR
+pulsemixer
+aurman
+tremc-git
+mpdscribble
+
+#  @@@@@@@@@@@@@@@@@@@@@@@@@@@@ End @@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+# ARCH ISO
+arch-install-scripts
+b43-fwcutter
+btrfs-progs
+clonezilla
+crda
+darkhttpd
+ddrescue
+dhclient
+dialog
+dmraid
+dnsmasq
+dnsutils
+dosfstools
+#elinks
+ethtool
+exfat-utils
+f2fs-tools
+fsarchiver
+gnu-netcat
+gpm
+gptfdisk
+grml-zsh-config
+grub
+hdparm
+ipw2100-fw
+ipw2200-fw
+lftp
+linux-atm
+lsscsi
+#mc
+mtools
+ndisc6
+nfs-utils
+nilfs-utils
+nmap
+ntfs-3g
+ntp
+openconnect
+openssh
+openvpn
+partclone
+parted
+partimage
+ppp
+pptpclient
+refind-efi
+# rfkill
+rp-pppoe
+rsync
+sdparm
+sg3_utils
+smartmontools
+speedtouch
+sudo
+tcpdump
+time
+testdisk
+usb_modeswitch
+#vim-minimal
+vpnc
+#wget
+wireless_tools
+wpa_actiond
+wvdial
+xl2tpd
+zd1211-firmware

@@ -1,0 +1,1 @@
+./tools/senarch-build.sh
