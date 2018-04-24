@@ -11,7 +11,7 @@ If you, random person stumbling upon this repo, want to build this live iso, fol
 ***USE AT OWN RISK***  
 
 ### Customize  
-================================================================================
+================================================================================  
 **I want to use special configs for my ISO, not my system ones..what do ?**
 * Add your customized configs into `./data/configs`  
 * When building the iso, you will be prompted whether you want to overwrite any conflicting configs.  
@@ -32,14 +32,14 @@ Might as well make your own from scratch.
 `https://wiki.archlinux.org/index.php/archiso`
 
 ### Build  
-================================================================================
+================================================================================  
 1) Run 'build.sh' located in the main SenArch directory  
 2) Let the script do it's thing  
 3) ....  
 4) profit ???  
 
 ### Install  
-================================================================================
+================================================================================  
 I've included step-by-step installation guide in the **docs** folder.  
 Hopefuly, this guide will be newbie friendly enough.
 If you struggle, I've included documentation from the Arch wiki. Read it.
@@ -57,10 +57,10 @@ I've also added two lil scripts in the 'tools' folder for easier install process
  
 
 ### Additional Info  
-================================================================================
+================================================================================  
 Live ISO su pass `SenArchSU`
 Live ISO user pass `changeme`
 
 ### TODO:  
-================================================================================
+================================================================================  
 TODO
